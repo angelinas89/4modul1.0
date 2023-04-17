@@ -8,24 +8,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class SecondActivity  extends AppCompatActivity implements SecondActivity3 {
+public class SecondActivity extends AppCompatActivity {
 
-    TextView nameTextView = findViewById(R.id.editTextTextPersonName);
-    TextView departureTextView = findViewById(R.id.editTextTextPersonName2);
-    TextView arrivalTextView = findViewById(R.id.editTextTime2);
-    TextView departureTimeTextView = findViewById(R.id.editTextTime3);
-    TextView arrivalTimeTextView = findViewById(R.id.editTextNumber);
-    TextView priceTextView = findViewById(R.id.editTextNumber2);
-    Button resetButton = findViewById(R.id.button2);
-
-    // Получение данных из интента и установка их в TextView элементы
-    Bundle extras = getIntent().getExtras();
-     if(extras !=null)
-
-    {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second2);
 
 
-        {
+        TextView nameTextView = findViewById(R.id.editTextTextPersonName);
+        TextView departureTextView = findViewById(R.id.editTextTextPersonName2);
+        TextView arrivalTextView = findViewById(R.id.editTextTime2);
+        TextView departureTimeTextView = findViewById(R.id.editTextTime3);
+        TextView arrivalTimeTextView = findViewById(R.id.editTextNumber);
+        TextView priceTextView = findViewById(R.id.editTextNumber2);
+        Button resetButton = findViewById(R.id.button2);
+
+// Получение данных из интента и установка их в TextView элементы
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
             nameTextView.setText(extras.getString("name"));
             departureTextView.setText(extras.getString("departure"));
             arrivalTextView.setText(extras.getString("arrival"));
@@ -36,8 +37,6 @@ public class SecondActivity  extends AppCompatActivity implements SecondActivity
 
 // Обработчик нажатия на кнопку resetButton
         resetButton.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
                 // Создание экземпляра класса Intent для перехода на MainActivity
@@ -49,24 +48,4 @@ public class SecondActivity  extends AppCompatActivity implements SecondActivity
             }
         });
     }
-
-    ;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
